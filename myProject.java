@@ -146,7 +146,7 @@ public class myProject {
         System.out.print("Enter the width of the triangle: ");
         double width = scanner.nextDouble();
 
-        double area = length * width;
+        double area = 0.5 * length * width;
         System.out.println();
         System.out.println("The area of triangle is: " + area);
     }
