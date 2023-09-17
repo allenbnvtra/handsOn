@@ -48,7 +48,7 @@ public class myProject {
             System.out.println();
             System.out.println("=======================================");
             System.out.println();
-            System.out.println("1] Calculate the area of the triangle");
+            System.out.println("1] Calculate the area of the rectangle");
             System.out.println("2] Convert Fahrenheit to Celsius");
             System.out.println("3] Compute Area, circumference and diameter of a circle");
             System.out.println("0] Back to the previous option");
@@ -59,7 +59,7 @@ public class myProject {
 
             switch (choice) {
                 case 1:
-                    AreaOftriangle(scanner);
+                    AreaOfrectangle(scanner);
                     break;
                 case 2:
                     CelciusToFahrenheit(scanner);
@@ -133,22 +133,22 @@ public class myProject {
         }
     }
 
-    public static void AreaOftriangle(Scanner scanner) {
+    public static void AreaOfrectangle(Scanner scanner) {
         System.out.println();
         System.out.println("=======================================");
         System.out.println();
-        System.out.println("[[ AREA OF TRIANGLE CALCULATOR ]]");
+        System.out.println("[[ AREA OF RECTANGLE CALCULATOR ]]");
         System.out.println();
 
-        System.out.print("Enter the length of the triangle: ");
+        System.out.print("Enter the length of the rectangle: ");
         double length = scanner.nextDouble();
 
-        System.out.print("Enter the width of the triangle: ");
+        System.out.print("Enter the width of the rectangle: ");
         double width = scanner.nextDouble();
 
-        double area = 0.5 * length * width;
+        double area = length * width;
         System.out.println();
-        System.out.println("The area of triangle is: " + area);
+        System.out.println("The area of rectangle is: " + area);
     }
 
     public static void CelciusToFahrenheit(Scanner scanner) {
