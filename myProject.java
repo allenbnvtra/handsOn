@@ -296,14 +296,14 @@ public class myProject {
                     initialBalance += amount;
                     break;
                 case 2:
-                    System.out.println("=======================================");
-                    System.out.println("Your current balance is " + initialBalance);
-                    System.out.print("Enter amount you want to withdraw: ");
-                    double withdrawAmount = scanner.nextDouble();
-                    if (withdrawAmount <= initialBalance) {
-                        initialBalance -= withdrawAmount;
-                    } else {
-                        System.out.println("Insufficient funds!");
+                    while (initialBalance != 0) {
+                        System.out.println("=======================================");
+                        System.out.println("Your current balance is " + initialBalance);
+                        System.out.print("Enter amount you want to withdraw: ");
+                        double withdrawAmount = scanner.nextDouble();
+                        if (withdrawAmount <= initialBalance) {
+                            initialBalance -= withdrawAmount;
+                        }
                     }
                     break;
                 case 0:
