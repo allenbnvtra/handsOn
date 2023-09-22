@@ -1,5 +1,6 @@
 package handsOn.proj;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class myProject {
@@ -15,22 +16,26 @@ public class myProject {
             System.out.println("3] Iteration");
             System.out.println("0] Exit the program");
             System.out.println();
-            System.out.println();
             System.out.print("Choose the structure you want: ");
-
             int choice = scanner.nextInt();
+            System.out.println();
+            System.out.println("=======================================");
 
             switch (choice) {
                 case 1:
+                    clearConsole();
                     SequentialMenu(scanner);
                     break;
                 case 2:
+                    clearConsole();
                     SelectionMenu(scanner);
                     break;
                 case 3:
+                    clearConsole();
                     IterationMenu(scanner);
                     break;
                 case 0:
+                    clearConsole();
                     System.out.println("SYSTEM SHUT DOWN!");
                     System.out.println();
                     scanner.close();
@@ -54,20 +59,25 @@ public class myProject {
             System.out.println("0] Back to the previous option");
             System.out.println();
             System.out.print("Please enter the number you choose: ");
-
             int choice = scanner.nextInt();
+            System.out.println();
+            System.out.println("=======================================");
 
             switch (choice) {
                 case 1:
+                    clearConsole();
                     AreaOfrectangle(scanner);
                     break;
                 case 2:
+                    clearConsole();
                     CelciusToFahrenheit(scanner);
                     break;
                 case 3:
+                    clearConsole();
                     CirclePropertiesCalculator(scanner);
                     break;
                 case 0:
+                    clearConsole();
                     return;
             }
         }
@@ -78,26 +88,32 @@ public class myProject {
         while (true) {
             System.out.println();
             System.out.println("=======================================");
+            System.out.println();
             System.out.println("1] Determin odd or even");
             System.out.println("2] Determine if year is leap year or not");
             System.out.println("3] Shipping Cost");
             System.out.println("0] Back to the previous option");
             System.out.println();
             System.out.print("Please enter the number you choose: ");
-
             int choice = scanner.nextInt();
+            System.out.println();
+            System.out.println("=======================================");
 
             switch (choice) {
                 case 1:
+                    clearConsole();
                     OddOrEven(scanner);
                     break;
                 case 2:
+                    clearConsole();
                     LeapYear(scanner);
                     break;
                 case 3:
+                    clearConsole();
                     ShippingCost(scanner);
                     break;
                 case 0:
+                    clearConsole();
                     return;
             }
         }
@@ -108,26 +124,32 @@ public class myProject {
         while (true) {
             System.out.println();
             System.out.println("=======================================");
+            System.out.println();
             System.out.println("1] First 10 Fibonacci numbers");
             System.out.println("2] ATM simulation");
             System.out.println("3] Multiplication Table of a given number");
             System.out.println("0] Back to the previous option");
             System.out.println();
             System.out.print("Please enter the number you choose: ");
-
             int choice = scanner.nextInt();
+            System.out.println();
+            System.out.println("=======================================");
 
             switch (choice) {
                 case 1:
+                    clearConsole();
                     Fibonacci(scanner);
                     break;
                 case 2:
+                    clearConsole();
                     AtmSimulation(scanner);
                     break;
                 case 3:
+                    clearConsole();
                     Multiplication(scanner);
                     break;
                 case 0:
+                    clearConsole();
                     return;
             }
         }
@@ -251,7 +273,7 @@ public class myProject {
 
     public static void Fibonacci(Scanner scanner) {
         int n = 10;
-        long[] fibonacci = new long[n];
+        int[] fibonacci = new int[n];
 
         fibonacci[0] = 0;
         fibonacci[1] = 1;
@@ -260,58 +282,39 @@ public class myProject {
             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
         }
 
-        System.out.println("THE FIRST 10 FIBONACCI SEQUENCE:");
+        System.out.println("=======================================");
+        System.out.println();
+        System.out.println("[[ FIRST 10 FIBONACCI NUMBERS ]]");
+        System.out.println();
         for (int i = 0; i < n; i++) {
-            System.out.print(fibonacci[i] + " ");
+            System.out.print(fibonacci[i] + " | ");
         }
+        System.out.println();
     }
 
     public static void AtmSimulation(Scanner scanner) {
         double initialBalance = 0;
 
-        while (true) {
+        System.out.println("=======================================");
+        System.out.println();
+        System.out.println("[[ ATM MACHINE ]]");
+        System.out.println();
+        System.out.print("Your current balance is " + initialBalance);
+        System.out.println();
+        System.out.print("Please enter the initial balance amount you want: ");
+        System.out.println();
+
+        initialBalance = scanner.nextDouble();
+        while (initialBalance > 0) {
             System.out.println("=======================================");
-            System.out.println("[[ ATM MACHINE ]]");
-            System.out.println();
-            System.out.print("Your current balance is " + initialBalance);
-            System.out.println();
-            System.out.println("1] Deposit");
-            System.out.println("2] Withdraw");
-            System.out.println("0] Back to the previous menu");
-
-            System.out.println();
-            System.out.print("Enter your choice: ");
-
-            int choice = scanner.nextInt();
-
-            switch (choice) {
-                case 1:
-                    System.out.println("=======================================");
-                    System.out.println();
-                    System.out.print("Your current balance is " + initialBalance);
-                    System.out.println();
-                    System.out.print("Enter amount you want to deposit: ");
-
-                    double amount = scanner.nextDouble();
-                    initialBalance += amount;
-                    break;
-                case 2:
-                    while (initialBalance != 0) {
-                        System.out.println("=======================================");
-                        System.out.println("Your current balance is " + initialBalance);
-                        System.out.print("Enter amount you want to withdraw: ");
-                        double withdrawAmount = scanner.nextDouble();
-                        if (withdrawAmount <= initialBalance) {
-                            initialBalance -= withdrawAmount;
-                        }
-                    }
-                    break;
-                case 0:
-                    return;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-                    break;
-
+            System.out.println("Your current balance is " + initialBalance);
+            System.out.print("Enter amount you want to withdraw: ");
+            double withdrawAmount = scanner.nextDouble();
+            if (withdrawAmount <= initialBalance) {
+                initialBalance -= withdrawAmount;
+            } else {
+                System.out.println("Not enough balance");
+                System.out.println();
             }
         }
     }
@@ -331,5 +334,19 @@ public class myProject {
             System.out.println(num + " x " + i + " = " + ans);
         }
 
+    }
+
+    public static void clearConsole() {
+        try {
+            final String os = System.getProperty("os.name");
+            if (os.contains("Windows")) {
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
